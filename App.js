@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, View } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
+import Rpost from './src/components/Rpost';
 
 export default function App() {
   return (
     <View>
-      <HomeScreen/>
+      <Rpost/>
     </View>
   );
 };
