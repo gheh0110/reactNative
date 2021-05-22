@@ -1,9 +1,13 @@
 import React from 'react';
 import { Text, View, Image, ImageBackground, Pressable, Dimensions } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
+
 const HomeScreen = (props) => {
+    const navigation = useNavigation();
+
   return (
     <View>
         <Pressable
@@ -24,7 +28,7 @@ const HomeScreen = (props) => {
                 zIndex: 100,
                 elevation: 100,
                 }}
-            onPress={() => console.warn('Button Clicked')}>
+            onPress={() => navigation.navigate('SearchOption')}>
             <Ionicons name={'md-search-sharp'} size={20} color={'#006161'}/>
             <Text style={{
                 fontSize: 16,

@@ -73,6 +73,7 @@ const Rpost = (props) => {
                     justifyContent: 'space-between',
                     paddingLeft: 10,
                     paddingRight: 10,
+                    backgroundColor: 'pink',
                 }}>
                     <Text style={{
                         fontSize: 18,
@@ -113,7 +114,7 @@ const Rpost = (props) => {
                     marginLeft: 10,
                 }}>
                     <MaterialCommunityIcons name={'highway'} size={24} color={'#dc143c'}/>
-                    {''}+ ₱100 / km after 50km
+                    {''}+ ₱200 / km after 50km
 
                 </Text>
                 <Text style={{
