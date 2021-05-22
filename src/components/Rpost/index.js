@@ -1,16 +1,39 @@
 import React from 'react';
-import { Text, View, Image, ImageBackground, Pressable, Dimensions } from 'react-native';
+import { Text, View, Image, Pressable, Dimensions } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 
 const Rpost = (props) => {
+
+    const post = props.post;
+
+    //const navigation = useNavigation();
+
+    const getImage = () => {
+        if (post.id === '00234'){
+            return require('../../assets/images/hondaCity.png')
+        }
+        if (post.id === '00426'){
+            return require('../../assets/images/toyotaFortuner.png')
+        }
+        if (post.id === '00433'){
+            return require('../../assets/images/mitsubishiMontero.png')
+        }
+        if (post.id === '00673'){
+            return require('../../assets/images/toyotaInnova.png')
+        }
+        if (post.id === '03461'){
+            return require('../../assets/images/nissanNV200.png')
+        }
+        if (post.id === '07921'){
+            return require('../../assets/images/mazdaSport.png')
+        }
+    };
+
   return (
-    <View style={{        
-        height: hp('100%'),
-        width: wp('100%'),
-    }}>
+    <View>
         <View style={{
             margin: 20,
             borderRadius: 10,
@@ -28,7 +51,7 @@ const Rpost = (props) => {
                             color: 'black',
                             marginLeft: 10,
                         }}>
-                            Honda City
+                           {post.carName}
                         </Text>
                 </View>
 
@@ -40,7 +63,7 @@ const Rpost = (props) => {
                     borderRadius: 10,
 
                 }}
-                    source={require('../../assets/images/hondaCity.png')}
+                    source={getImage()}
                 />
 
                 <View style={{
@@ -56,7 +79,7 @@ const Rpost = (props) => {
                         fontWeight: 'bold',
                     }}>
                         <MaterialCommunityIcons name={'car-seat'} size={24} color={'#dc143c'}/>
-                        8
+                        {post.capacity}
                     </Text>
                     <Text style={{
                         fontSize: 18,
@@ -72,7 +95,7 @@ const Rpost = (props) => {
                         marginLeft: 10,
                     }}>
                         <MaterialCommunityIcons name={'car-shift-pattern'} size={24} color={'#dc143c'}/>
-                        Automatic
+                        {post.transmission}
                     </Text>
                     <Text style={{
                         fontSize: 18,
@@ -80,7 +103,7 @@ const Rpost = (props) => {
                         marginLeft: 10,
                     }}>
                         <MaterialIcons name={'device-thermostat'} size={24} color={'#dc143c'}/>
-                        Yes
+                        {post.aircon}
                     </Text>   
                 </View>
 
@@ -100,7 +123,7 @@ const Rpost = (props) => {
                     marginBottom: 10,
                 }}>
                     <MaterialCommunityIcons name={'currency-php'} size={24} color={'#dc143c'}/>
-                    2500.00 / day
+                    {post.price}.00 / day
 
                 </Text>
                
